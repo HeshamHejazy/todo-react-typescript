@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+body {
+  background: linear-gradient(
+    90deg,
+    rgb(105, 182, 250) 0%,
+    rgba(44, 114, 251, 1) 100%
+  );
+  @apply flex items-center justify-center w-full h-[100vh]
+}
+.todo-app {
+  @apply bg-gray-100 relative flex flex-col justify-start w-[350px] min-h-[95vh] text-center
+}
+.todo-app ul{
+  @apply flex flex-col gap-3 m-0 list-none p-3
+}
+h1 {
+  @apply my-8 mx-0 text-2xl
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.completed {
+  @apply line-through opacity-40
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todo-add-button {
+  @apply cursor-pointer rounded-full bg-blue-600 shadow-xl flex items-center justify-center leading-none p-2 w-16 h-16 text-2xl font-bold text-white
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.todo-add-button-wrapper {
+  @apply bg-gradient-to-b from-transparent to-gray-400 w-full absolute bottom-0 flex items-center justify-center py-3
 }
 
-.App-link {
-  color: #61dafb;
+.todo-container {
+  @apply flex relative
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-row {
+  @apply flex justify-between items-center shadow-md p-3 rounded-3xl w-full bg-white
+}
+
+.todo-form-wrapper{
+  @apply bg-black bg-opacity-60 w-full h-full absolute flex items-center justify-center p-5
+}
+
+.todo-form{
+  @apply bg-white w-full p-3 rounded-sm shadow-md relative flex flex-col gap-4 items-center;
+}
+
+.todo-input{
+  @apply w-full mt-6 p-3 border border-gray-300 rounded-md
+}
+
+.todo-submit{
+  @apply bg-blue-600 py-2 px-4 text-white rounded-3xl text-sm
+}
+
+.todo-checkbox{
+  @apply relative h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-blue-600 checked:after:absolute checked:after:rounded-full checked:after:border-blue-600 checked:after:bg-blue-600 checked:after:content-[''] hover:cursor-pointer focus:shadow-none focus:outline-none focus:ring-0 
 }
